@@ -35,10 +35,3 @@ class UserCategory(models.Model):
     class Meta:
         verbose_name = 'UserCategory'
         verbose_name_plural = 'UserCategories'
-
-
-# User.categories.all() (return all of the categories) - related name
-
-# M2M_changed signal
-
-

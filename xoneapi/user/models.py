@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.db.models.signals import post_save
 
-from .signals import post_save_user
+from user.signals import post_save_user
 
 
 class User(models.Model):
@@ -13,9 +13,6 @@ class User(models.Model):
         return f'{self.user}'
 
 
-post_save.connect(post_save_user, sender=User)
-
-
 class Account(models.Model):
     balance = models.FloatField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
@@ -23,3 +20,5 @@ class Account(models.Model):
     def __str__(self):
         return f'{self.balance}'
 
+
+post_save.connect(post_save_user, sender=User)

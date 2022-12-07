@@ -12,14 +12,8 @@ class UserSerializer(ModelSerializer):
 
 
 class AccountSerializer(ModelSerializer):
-    user = UserSerializer()
-
     class Meta:
         model = Account
         fields = [
             'balance',
-            'user',
         ]
-
-
-
