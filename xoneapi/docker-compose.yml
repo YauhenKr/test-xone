@@ -5,3 +5,12 @@ services:
     image: redis
     ports:
       - 6379:6379
+
+  celery:
+    build: .
+    volumes:
+      - .:/src
+    container_name: cl01
+    command: celery -A server worker -l info
+    links:
+      - redis
