@@ -19,17 +19,9 @@ from django.urls import path, include, re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # authentication with token
     path('auth/', include('djoser.urls')),
     re_path('^auth/', include('djoser.urls.authtoken')),
-
-    # users balance
     path('user/', include('user.urls')),
-
-    # create / list of transaction(s)
     path('transaction/', include('transactions.urls')),
-
-    # create / delete a new category
     path('category/', include('categories.urls')),
 ]
