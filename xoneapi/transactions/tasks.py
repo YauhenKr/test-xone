@@ -1,7 +1,7 @@
 from django.core.mail import send_mail
 
-from xoneapi.celery import app
 from user.models import User
+from xoneapi.celery import app
 
 
 @app.task
